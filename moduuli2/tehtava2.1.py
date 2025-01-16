@@ -1,1 +1,2 @@
-käyttäjä=input('Anna nimesi: ')
+user= input('Anna nimesi: ')
+print("hauska tavata " +user+ '!')
