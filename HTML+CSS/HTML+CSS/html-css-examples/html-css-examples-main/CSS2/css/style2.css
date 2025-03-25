@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Noto;
+    src: url("NotoSans-Regular.ttf") format("truetype");
+}
+
+
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+html {
+    font-family: Noto,Helvetica;
+}
+
+
+header {
+    background-color: lightgoldenrodyellow;
+}
+
+li a {
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: yellow;
+}
+
+li a:hover:after {
+    content: 'VS'
+}
+main {
+    background-color: lightgoldenrodyellow;
+}
+
