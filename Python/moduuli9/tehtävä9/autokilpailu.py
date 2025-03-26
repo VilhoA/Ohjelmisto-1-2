@@ -23,19 +23,43 @@ class Kilpailu:
     def __init__(self, kisanimi, pituus, osallistujat):
         self.kisanimi=kisanimi
         self.pituus=pituus
-        self.osallistujat=[]
+        self.osallistujat= osallistujat
 
-    def tunti_kuluu(self,tuntimaara):
-        self.tuntimaara=tuntimaara
-        for n in range(self.tuntimaara):
-            for a in self.osallistujat:
-                self.osallistujat[a].kiihdyta(random.randint(-10, 15))
-                self.osallistujat[a].kulje(1)
+    def tunti_kuluu(self):
+        for a in self.osallistujat:
+            a.kiihdyta(random.randint(-10, 15))
+            a.kulje(1)
 
+    def tulosta_tilanne(self,):
+        print('----------------------------------')
+        for n in self.osallistujat:
+            print(f'Matka: {n.matka:5}|, Nopeus: {n.nopeus:5}|, Huippunopeus: {n.huippunopeus:5}|, Rekisteritunnus: {n.rekisteritunnus:8}|')
 
 
     def kilpailu_ohi(self):
-        pass
+        for n in osallistujat:
+            if n.matka > self.pituus:
+                return True
+        return False
+
+osallistujat= []
+for n in range(10):
+    osallistujat.append(Auto(('ABC-' + f'{n + 1}'), (random.randint(100,200))))
+
+
+romuralli = Kilpailu('Suuri romuralli', 8000, osallistujat)
+
+
+while not romuralli.kilpailu_ohi():
+    tunnit = 0
+    romuralli.tunti_kuluu()
+    if tunnit % 10 == 0:
+        romuralli.tulosta_tilanne()
+print()
+print()
+print('Lopputulos')
+print()
+romuralli.tulosta_tilanne()
 
 # kommentoituna alkuperäinen autokilpailu ennen tehtävää 10
 # autot = []
@@ -60,4 +84,3 @@ class Kilpailu:
 #     print(f'REK: {n.rekisteritunnus}| MATKA:{n.matka}| NOPEUS:{n.nopeus}| HUIPPUNOPEUS:{n.huippunopeus}')
 
 
-romuralli= Kilpailu.__init__(testikisa, 23, 23, f'{for o in range:
